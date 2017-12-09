@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/servlet-api.jar" sourcepath="SOURCE_ATTACHER/tomcat-servlet-api-8.0.44-sources.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/jsp-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
+	<classpathentry kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
+	<classpathentry kind="src" output="WEB-INF/jsp" path="WEB-INF/src/jsp"/>
+	<classpathentry kind="src" path="WEB-INF/src/java"/>
+	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/jstl.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/standard.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/lucene-analyzers-common-7.1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/lucene-core-7.1.0.jar" sourcepath="C:/Users/gasyo/AppData/Local/Temp/decompiler/source/lucene-core-7.1.0-sources-1512095209561.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/lucene-queries-7.1.0.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/lucene-queryparser-7.1.0.jar" sourcepath="C:/Users/gasyo/AppData/Local/Temp/decompiler/source/lucene-queryparser-7.1.0-sources.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/mysql-connector-java-5.1.45-bin.jar" sourcepath="WEB-INF/lib/mysql-connector-java-5.1.45-bin-source.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang3-3.6.jar" sourcepath="WEB-INF/lib/commons-lang3-3.6-sources.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.11.jar" sourcepath="WEB-INF/lib/commons-codec-1.11-sources.jar"/>
+	<classpathentry kind="output" path="WEB-INF/classes"/>
+</classpath>

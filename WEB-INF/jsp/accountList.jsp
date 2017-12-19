@@ -2,7 +2,7 @@
 <jsp:include page="common.jsp"></jsp:include>
 --%>
 <%@ include file="common.jsp"%>
-<%@ page import="account.entity.Account" %>
+<%@ page import="com.google.api.services.analytics.model.Account" %>
 <%
 List<Account> accounts = (List<Account>) request.getAttribute("accounts");
 String id = (String) request.getAttribute("id") != null ? (String) request.getAttribute("id") : "";
@@ -14,7 +14,7 @@ String id = (String) request.getAttribute("id") != null ? (String) request.getAt
 </head>
 <body>
 <h1>Accounts</h1>
-<form action="<%=contextPath %>/servlet/searchAccount" method="get">
+<form action="${app}/AccountList.x" method="get">
 	<input type="text" name="accountId" value="<%=id%>">
 	<button type="submit">Send</button>
 </form>

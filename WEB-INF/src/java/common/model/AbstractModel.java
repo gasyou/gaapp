@@ -20,7 +20,7 @@ public abstract class AbstractModel {
 	 * Model を実行する.
 	 * @return フォワード情報
 	 */
-	public ForwardInfo execute() {
+	public ForwardInfo execute() throws Exception {
 
 		String forward = this.action();
 
@@ -34,9 +34,10 @@ public abstract class AbstractModel {
 
 	/**
 	 * Model を動作させる.
+	 * @throws Exception
 	 * @retursdazn フォワード先
 	 */
-	public abstract String action();
+	public abstract String action() throws Exception;
 
 	/**
 	 * Model 情報を設定する.

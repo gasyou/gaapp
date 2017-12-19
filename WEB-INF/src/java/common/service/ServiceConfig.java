@@ -12,12 +12,15 @@ public class ServiceConfig {
 	public static final String DB_USER = "db.user";
 	public static final String DB_PASSWORD = "db.password";
 
+	public static final String GA_APPLICATION_NAME = "ga.application.name";
+	public static final String GA_KEY_FILE_LOCATION = "ga.key.file.location";
+	public static final String GA_SERVICE_ACCOUNT_EMAIL = "ga.service.account.email";
+
 	/** 設定パラメーター */
 	private Map<String, String> params = new HashMap<String, String>();
 
 	/** Service 設定インスタンス */
 	private static ServiceConfig instance = new ServiceConfig();
-
 
 	/**
 	 * Service 設定を取得する.

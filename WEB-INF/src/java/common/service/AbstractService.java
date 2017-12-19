@@ -20,7 +20,14 @@ public abstract class AbstractService {
 	 */
 	void initialize(ServiceConfig serviceConfig) {
 		this.serviceConfig = serviceConfig;
+		this.subInitialize(serviceConfig);
 	}
+
+	/**
+	 * Service を初期化する(サブクラス処理).
+	 * @param serviceConfig Service 設定
+	 */
+	protected void subInitialize(ServiceConfig serviceConfig) {}
 
 	/**
 	 * Service 設定を取得する.
@@ -80,12 +87,12 @@ public abstract class AbstractService {
 		} catch (SQLException e) {
 			throw new ServiceException(e);
 		}
-		
+
 	}
 
 	/**
 	 * データベースのコネクションをクローズする.
-	 * @throws DataAccessException 
+	 * @throws DataAccessException
 	 */
 	protected void close(Connection conn) {
 		try {

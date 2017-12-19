@@ -15,7 +15,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 
-import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.StringUtils;
 import org.xml.sax.SAXException;
@@ -52,11 +51,11 @@ public class ModelServlet extends AbstractServlet {
 		//----------------------------------
 		// Service の初期設定
 		//----------------------------------
-		
+
 
 		// モデルの設定を読み込む
 		String modelConfigPath = props.getProperty("model-config");
-		
+
 		try {
 			is = ModelServlet.class.getResourceAsStream("/" + modelConfigPath);
 
@@ -80,6 +79,11 @@ public class ModelServlet extends AbstractServlet {
 		sParams.put(ServiceConfig.DB_URL, props.getProperty(ServiceConfig.DB_URL));
 		sParams.put(ServiceConfig.DB_USER, props.getProperty(ServiceConfig.DB_USER));
 		sParams.put(ServiceConfig.DB_PASSWORD, props.getProperty(ServiceConfig.DB_PASSWORD));
+
+		sParams.put(ServiceConfig.GA_APPLICATION_NAME, props.getProperty(ServiceConfig.GA_APPLICATION_NAME));
+		sParams.put(ServiceConfig.GA_SERVICE_ACCOUNT_EMAIL, props.getProperty(ServiceConfig.GA_SERVICE_ACCOUNT_EMAIL));
+		sParams.put(ServiceConfig.GA_KEY_FILE_LOCATION, props.getProperty(ServiceConfig.GA_KEY_FILE_LOCATION));
+
 		ServiceConfig.initialize(sParams);
 	}
 

@@ -17,7 +17,7 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/lucene-queryparser-7.1.0.jar" sourcepath="C:/Users/gasyo/AppData/Local/Temp/decompiler/source/lucene-queryparser-7.1.0-sources.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-lang3-3.6.jar" sourcepath="WEB-INF/lib/commons-lang3-3.6-sources.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/commons-codec-1.11.jar" sourcepath="WEB-INF/lib/commons-codec-1.11-sources.jar"/>
-	<classpathentry kind="lib" path="WEB-INF/lib/google-api-services-analytics-v3-rev142-1.23.0.jar" sourcepath="C:/Users/gasyo/AppData/Local/Temp/decompiler/source/google-api-services-analytics-v3-rev142-1.23.0-sources-1513691220469.jar">
+	<classpathentry kind="lib" path="WEB-INF/lib/google-api-services-analytics-v3-rev142-1.23.0.jar" sourcepath="C:/Users/gasyo/AppData/Local/Temp/decompiler/source/google-api-services-analytics-v3-rev142-1.23.0-sources-1514320632050.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:platform:/resource/sampleapp/WEB-INF/lib/google-api-services-analytics-v3-rev142-1.23.0-javadoc.jar!/"/>
 		</attributes>
@@ -52,5 +52,15 @@
 	<classpathentry kind="lib" path="WEB-INF/lib/jetty-util-6.1.26.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/mysql-connector-java-5.1.45-bin-source.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/transaction-api-1.1.jar"/>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-api-2.10.0.jar" sourcepath="WEB-INF/libs-source/log4j-api-2.10.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/sampleapp/WEB-INF/libs-source/log4j-api-2.10.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="WEB-INF/lib/log4j-core-2.10.0.jar" sourcepath="WEB-INF/libs-source/log4j-core-2.10.0-sources.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="jar:platform:/resource/sampleapp/WEB-INF/libs-source/log4j-core-2.10.0-javadoc.jar!/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="output" path="WEB-INF/classes"/>
 </classpath>

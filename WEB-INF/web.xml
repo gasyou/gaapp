@@ -32,7 +32,7 @@
 	<!--  Define Filters -->
 	<filter>
 		<filter-name>RequestLogFilter</filter-name>
-		<filter-class>common.filter.RequestLogFilter</filter-class>
+		<filter-class>com.gasyou.gam.common.filter.RequestLogFilter</filter-class>
 	</filter>
 	<filter-mapping>
 		<filter-name>RequestLogFilter</filter-name>
@@ -43,7 +43,7 @@
 
     <servlet>
         <servlet-name>ModelServlet</servlet-name>
-        <servlet-class>common.servlet.ModelServlet</servlet-class>
+        <servlet-class>com.gasyou.gam.common.servlet.ModelServlet</servlet-class>
 	    <init-param>
 	      <param-name>property</param-name>
 	      <param-value>init.properties</param-value>

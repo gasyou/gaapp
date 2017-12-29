@@ -7,8 +7,9 @@
 	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
 	<classpathentry kind="src" output="WEB-INF/jsp" path="WEB-INF/src/jsp"/>
-	<classpathentry kind="src" path="WEB-INF/src/java"/>
 	<classpathentry kind="src" output="work" path="work"/>
+	<classpathentry kind="src" path="WEB-INF/src/java"/>
+	<classpathentry kind="src" path="WEB-INF/src/resources"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/jstl.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/standard.jar"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/lucene-analyzers-common-7.1.0.jar"/>

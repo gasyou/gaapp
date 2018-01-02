@@ -6,35 +6,30 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Properties;
 
-import javax.servlet.ServletConfig;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
-import javax.xml.parsers.SAXParserFactory;
 
 import org.apache.commons.codec.net.URLCodec;
 import org.apache.commons.lang3.StringUtils;
-import org.xml.sax.SAXException;
 
 import com.gasyou.gam.common.model.AbstractModel;
 import com.gasyou.gam.common.model.ForwardInfo;
 import com.gasyou.gam.common.model.LoginInfo;
 import com.gasyou.gam.common.model.ModelConfig;
-import com.gasyou.gam.common.model.ModelConfigSAXHandler;
+import com.gasyou.gam.common.model.ModelConfigFactory;
 import com.gasyou.gam.common.model.ModelInfo;
 import com.gasyou.gam.common.service.ServiceConfig;
 
 public class ModelServlet extends AbstractServlet {
 
-	protected Properties props = null;
 	private ModelConfig modelConfig = null;
 
+	protected Properties props = null;
+
 	@Override
-	public void init(ServletConfig config) throws ServletException {
-		super.init(config);
+	public void init() throws ServletException {
 		String property = getInitParameter("property");
 
 		InputStream is = null;
@@ -49,28 +44,11 @@ public class ModelServlet extends AbstractServlet {
 		}
 
 		//----------------------------------
-		// Service の初期設定
+		// Model の初期設定
 		//----------------------------------
-
-
 		// モデルの設定を読み込む
 		String modelConfigPath = props.getProperty("model-config");
-
-		try {
-			is = ModelServlet.class.getResourceAsStream("/" + modelConfigPath);
-
-			// SAXを扱う時のオマジナイ
-			SAXParserFactory saxParserFactory = SAXParserFactory.newInstance();
-			SAXParser parser = saxParserFactory.newSAXParser();
-
-			// XML 処理
-			ModelConfigSAXHandler handler = new ModelConfigSAXHandler();
-			parser.parse(is, handler);
-			this.modelConfig = handler.getModelConfig();
-			is.close();
-		} catch (ParserConfigurationException | SAXException | IOException e) {
-			throw new ServletException(e);
-		}
+		this.modelConfig = new ModelConfigFactory(modelConfigPath).create();
 
 		//----------------------------------
 		// Service の初期設定

@@ -20,7 +20,7 @@ public class ServiceConfig {
 	private Map<String, String> params = new HashMap<String, String>();
 
 	/** Service 設定インスタンス */
-	private static ServiceConfig instance = new ServiceConfig();
+	private static final ServiceConfig instance = new ServiceConfig();
 
 	/**
 	 * Service 設定を取得する.

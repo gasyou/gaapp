@@ -17,8 +17,4 @@
 		<forward name="success" path="/WEB-INF/jsp/complete.jsp"></forward>
 		<forward name="confirm_success" path="/WEB-INF/jsp/user.jsp"></forward>
 	</model>
-	<model name="AccountList">
-		<model-class value="com.gasyou.gam.account.model.AccountListModel"></model-class>
-		<forward name="success" path="/WEB-INF/jsp/accountList.jsp"></forward>
-	</model>
 </model-config>

@@ -4,6 +4,10 @@
 		<model-class value="com.gasyou.gam.login.model.LoginModel"></model-class>
 		<forward name="success" path="/WEB-INF/jsp/login.jsp"></forward>
 	</model>
+	<model name="menu">
+		<model-class value="com.gasyou.gam.menu.model.MenuModel"></model-class>
+		<forward name="success" path="/WEB-INF/jsp/menu.jsp"></forward>
+	</model>
 	<model name="UserList">
 		<model-class value="com.gasyou.gam.user.model.UserListModel"></model-class>
 		<forward name="success" path="/WEB-INF/jsp/userList.jsp"></forward>

@@ -56,7 +56,7 @@
     </servlet-mapping>
 
     <welcome-file-list>
-	    <welcome-file>/WEB-INF/src/jsp/index.jsp</welcome-file>
+	    <welcome-file>menu.x</welcome-file>
     <!--
         <welcome-file>index.html</welcome-file>
         <welcome-file>index.xhtml</welcome-file>
@@ -65,4 +65,12 @@
     -->
     </welcome-file-list>
 
+	<error-page>
+		<error-code>404</error-code>
+		<location>/WEB-INF/jsp/error/404.jsp</location>
+	</error-page>
+	<error-page>
+		<error-code>500</error-code>
+		<location>/WEB-INF/jsp/error/500.jsp</location>
+	</error-page>
 </web-app>

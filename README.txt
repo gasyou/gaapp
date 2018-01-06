@@ -22,6 +22,8 @@ https://itsakura.com/java-log4j2-sample
 --------------------------------------------------------
 Bootstrap
 
+v4.0(最新版)を利用
+
 - ダウンロード
 https://getbootstrap.com/
 
@@ -30,6 +32,9 @@ https://getbootstrap.com/docs/3.3/css/
 
 - 参考
 https://techacademy.jp/magazine/6270#sec1
+
+- Form の Validation の色変更で参考
+https://getbootstrap.com/docs/4.0/components/forms/#custom-styles
 --------------------------------------------------------
 ※予定
 Sass

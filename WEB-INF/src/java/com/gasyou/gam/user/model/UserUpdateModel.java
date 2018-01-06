@@ -33,7 +33,9 @@ public class UserUpdateModel extends AbstractModel {
 			}
 
 			User user = new User();
-			user.setId(Integer.parseInt(req.getParameter("id")));
+			if (!"add".equals(mode)) {
+				user.setId(Integer.parseInt(req.getParameter("id")));
+			}
 			user.setLoginId(req.getParameter("loginId"));
 			user.setPassword(password);
 			user.setName(req.getParameter("name"));

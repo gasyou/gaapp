@@ -1,5 +1,5 @@
 <%@ include file="common.jsp"%>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <title>Menu</title>

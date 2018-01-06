@@ -8,3 +8,10 @@
 String contextPath = request.getContextPath();
 %>
 <c:set var="app" value="<%= contextPath %>" />
+
+<script type="text/javascript">
+<%-- JavaScriptのグローバル定数を用意 --%>
+var GAM = {
+        APP:"${app}"
+};
+</script>

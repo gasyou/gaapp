@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/servlet-api.jar" sourcepath="SOURCE_ATTACHER/tomcat-servlet-api-8.0.44-sources-1514907539673.jar"/>
+	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/servlet-api.jar" sourcepath="SOURCE_ATTACHER/tomcat-servlet-api-8.0.44-sources-1515077955431.jar"/>
 	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/jasper.jar"/>
 	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/jsp-api.jar" sourcepath="SOURCE_ATTACHER/tomcat-jsp-api-8.0.44-sources.jar"/>
 	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/el-api.jar"/>
 	<classpathentry exported="true" kind="var" path="TOMCAT_HOME/lib/annotations-api.jar"/>
-	<classpathentry kind="src" output="work" path="work"/>
 	<classpathentry kind="src" path="WEB-INF/src/java"/>
 	<classpathentry kind="src" path="WEB-INF/src/resources"/>
 	<classpathentry kind="lib" path="WEB-INF/lib/jstl.jar" sourcepath="C:/Users/gasyo/AppData/Local/Temp/decompiler/source/jstl-1.1.2-sources.jar"/>

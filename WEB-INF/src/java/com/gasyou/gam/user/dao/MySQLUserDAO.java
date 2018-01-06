@@ -92,14 +92,16 @@ public class MySQLUserDAO implements UserDAO {
         try {
 
         	StringBuffer sql = new StringBuffer();
-        	sql.append("INSERT INTO USER(id, login_id, password, name, upd_cnt) VALUE (?, ?, ?, ?, ?)");
+        	// AUTO_INCREMENT の利用
+//        	sql.append("INSERT INTO USER(id, login_id, password, name, upd_cnt) VALUE (?, ?, ?, ?, ?)");
+        	sql.append("INSERT INTO USER(login_id, password, name, upd_cnt) VALUE (?, ?, ?, ?)");
 
         	PreparedStatement pstmt = conn.prepareStatement(sql.toString());
-        	pstmt.setInt(1, user.getId());
-        	pstmt.setString(2, user.getLoginId());
-        	pstmt.setString(3, user.getPassword());
-        	pstmt.setString(4, user.getName());
-        	pstmt.setInt(5, 1);
+//        	pstmt.setInt(1, user.getId());
+        	pstmt.setString(1, user.getLoginId());
+        	pstmt.setString(2, user.getPassword());
+        	pstmt.setString(3, user.getName());
+        	pstmt.setInt(4, 1);
 
             ret = pstmt.executeUpdate();
 

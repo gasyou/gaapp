@@ -21,4 +21,8 @@
 		<forward name="success" path="/WEB-INF/jsp/complete.jsp"></forward>
 		<forward name="confirm_success" path="/WEB-INF/jsp/user.jsp"></forward>
 	</model>
+	<model name="checkDuplicateLoginId">
+		<model-class value="com.gasyou.gam.user.model.CheckDuplicateLoginIdModel"></model-class>
+		<forward name="success" path="/WEB-INF/jsp/checkDuplicateLoginId.jsp"></forward>
+	</model>
 </model-config>

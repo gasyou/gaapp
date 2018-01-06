@@ -11,7 +11,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="row-fluid">
+		<div class="row">
 			<h1>Accounts</h1>
 			<form action="${app}/AccountList.x" method="get">
 				<input type="text" name="accountId" value="<%=id%>">

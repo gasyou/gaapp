@@ -1,5 +1,5 @@
 <%@ include file="../common.jsp"%>
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <head>
 <title>Not Found</title>
@@ -7,7 +7,7 @@
 </head>
 <body>
 	<div class="container-fluid">
-		<div class="row-fluid">
+		<div class="row">
 			<h1>Not Found</h1>
 		</div>
 	</div>

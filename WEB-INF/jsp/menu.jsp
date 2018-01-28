@@ -10,7 +10,9 @@
 	<div class="menu">
 		<div class="col left"></div>
 		<div class="col riglt">
-			<iframe id="main_panel"></iframe>
+			<p><a href="${app}/UserList.x">User List</a>
+			<p><a href="${app}/AccountList.x">Account List</a>
+			<p><a href="${app}/ProfileList.x">Profile List</a>
 		</div>
 	</div>
 </body>

@@ -15,6 +15,10 @@ import com.google.api.services.analytics.Analytics;
 import com.google.api.services.analytics.AnalyticsScopes;
 import com.google.api.services.analytics.model.Account;
 import com.google.api.services.analytics.model.Accounts;
+import com.google.api.services.analytics.model.Profile;
+import com.google.api.services.analytics.model.Profiles;
+import com.google.api.services.analytics.model.Webproperties;
+import com.google.api.services.analytics.model.Webproperty;
 
 /**
  * A simple example of how to access the Google Analytics API using a service
@@ -58,6 +62,18 @@ public class GAService extends AbstractService {
 		// Query for the list of all accounts associated with the service account.
 		Accounts accounts = analytics.management().accounts().list().execute();
 		return accounts.getItems();
+	}
+
+	public List<Webproperty> getWebproperties(String accountId) throws IOException {
+
+		Webproperties webProperties = analytics.management().webproperties().list(accountId).execute();
+		return webProperties.getItems();
+	}
+
+	public List<Profile> getProfiles(String accountId, String webPropertyId) throws IOException {
+
+		Profiles profiles = analytics.management().profiles().list(accountId, webPropertyId).execute();
+		return profiles.getItems();
 	}
 
 //	private static String getFirstProfileId(Analytics analytics) throws IOException {

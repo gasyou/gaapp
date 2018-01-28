@@ -25,4 +25,8 @@
 		<model-class value="com.gasyou.gam.user.model.CheckDuplicateLoginIdModel"></model-class>
 		<forward name="success" path="/WEB-INF/jsp/checkDuplicateLoginId.jsp"></forward>
 	</model>
+	<model name="ProfileList">
+		<model-class value="com.gasyou.gam.profile.model.ProfileListModel"></model-class>
+		<forward name="success" path="/WEB-INF/jsp/profileList.jsp"></forward>
+	</model>
 </model-config>

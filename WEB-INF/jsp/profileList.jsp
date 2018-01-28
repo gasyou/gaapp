@@ -1,12 +1,10 @@
+<%@ page pageEncoding="UTF-8"%>
 <%@ include file="common.jsp"%>
-<%@ page import="com.google.api.services.analytics.model.Account"%>
 <%
-	List<Account> accounts = (List<Account>) request.getAttribute("accounts");
-	String id = (String) request.getAttribute("id") != null ? (String) request.getAttribute("id") : "";
 %>
 <html>
 <head>
-<title>Search Account</title>
+<title>Search Profile</title>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 <jsp:include page="headCommon.jsp" />
 </head>
@@ -14,13 +12,13 @@
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col">
-				<h1>Accounts</h1>
+				<h1>Views</h1>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col">
 				<form action="${app}/AccountList.x" method="get">
-					<input type="text" name="accountId" value="<%=id%>">
+					<input type="text" name="accountId" value="">
 					<button type="submit">Search</button>
 				</form>
 			</div>
@@ -29,13 +27,21 @@
 			<div class="col">
 				<table class="table table-striped">
 					<tr>
-						<th>ID</th>
-						<th>Name</th>
+						<th>アカウントID</th>
+						<th>アカウント名</th>
+						<th>プロパティID</th>
+						<th>プロパティ名</th>
+						<th>ビューID</th>
+						<th>ビュー名</th>
 					</tr>
-					<c:forEach var="acct" items="<%=accounts%>">
+					<c:forEach var="profileW" items="${profiles}">
 						<tr>
-							<td>${acct.id}</td>
-							<td>${acct.name}</td>
+							<td>${profileW.account.id}</td>
+							<td>${profileW.account.name}</td>
+							<td>${profileW.webProperty.id}</td>
+							<td>${profileW.webProperty.name}</td>
+							<td>${profileW.profile.id}</td>
+							<td>${profileW.profile.name}</td>
 						</tr>
 					</c:forEach>
 				</table>

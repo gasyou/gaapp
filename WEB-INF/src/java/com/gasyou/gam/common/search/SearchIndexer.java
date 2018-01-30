@@ -11,8 +11,6 @@ import org.apache.lucene.index.IndexWriterConfig;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 
-import com.gasyou.gam.account.entity.Account;
-
 public class SearchIndexer {
 
 	public void saveIndex(SearchableAsset asset) throws IOException {
@@ -30,14 +28,14 @@ public class SearchIndexer {
 	}
 
 	public static void main(String[] args) throws IOException {
-		Account ac = new Account();
-		ac.setId("1");
-		ac.setName("Masaaki Tsujimoto");
-		new SearchIndexer().saveIndex(ac);
-
-		ac = new Account();
-		ac.setId("2");
-		ac.setName("Hoge Hogera");
-		new SearchIndexer().saveIndex(ac);
+//		AccountWrapper ac = new AccountWrapper();
+//		ac.setId("1");
+//		ac.setName("Masaaki Tsujimoto");
+//		new SearchIndexer().saveIndex(ac);
+//
+//		ac = new AccountWrapper();
+//		ac.setId("2");
+//		ac.setName("Hoge Hogera");
+//		new SearchIndexer().saveIndex(ac);
 	}
 }

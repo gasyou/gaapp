@@ -21,60 +21,60 @@ import org.apache.lucene.store.FSDirectory;
 
 public class Searcher {
 
-	public Document getDocument(SearchableAsset sa) throws IOException, ParseException {
-
-		Analyzer analyzer = new StandardAnalyzer();
-
-		Path path = Paths.get("/work/lucene/sampleapp");
-	    Directory directory = FSDirectory.open(path);
-
-		// Now search the index:
-	    DirectoryReader ireader = DirectoryReader.open(directory);
-	    IndexSearcher isearcher = new IndexSearcher(ireader);
-
-	    // Parse a simple query that searches for "text":
-	    QueryParser parser = new QueryParser("fulltext", analyzer);
-	    Query query = parser.parse(fulltext);
-
-	    ScoreDoc[] hits = isearcher.search(query, 100, new Sort()).scoreDocs;
-	    // Iterate through the results:
-	    List<Document> results = new ArrayList<Document>();
-	    for (int i = 0; i < hits.length; i++) {
-	      Document hitDoc = isearcher.doc(hits[i].doc);
-	      results.add(hitDoc);
-	    }
-	    ireader.close();
-	    directory.close();
-
-	    return results;
-	}
+//	public Document getDocument(SearchableAsset sa) throws IOException, ParseException {
+//
+//		Analyzer analyzer = new StandardAnalyzer();
+//
+//		Path path = Paths.get("/work/lucene/sampleapp");
+//	    Directory directory = FSDirectory.open(path);
+//
+//		// Now search the index:
+//	    DirectoryReader ireader = DirectoryReader.open(directory);
+//	    IndexSearcher isearcher = new IndexSearcher(ireader);
+//
+//	    // Parse a simple query that searches for "text":
+//	    QueryParser parser = new QueryParser("fulltext", analyzer);
+//	    Query query = parser.parse(fulltext);
+//
+//	    ScoreDoc[] hits = isearcher.search(query, 100, new Sort()).scoreDocs;
+//	    // Iterate through the results:
+//	    List<Document> results = new ArrayList<Document>();
+//	    for (int i = 0; i < hits.length; i++) {
+//	      Document hitDoc = isearcher.doc(hits[i].doc);
+//	      results.add(hitDoc);
+//	    }
+//	    ireader.close();
+//	    directory.close();
+//
+//	    return results;
+//	}
 
 	public List<Document> search(String fulltext) throws IOException, ParseException {
 
 		Analyzer analyzer = new StandardAnalyzer();
 
 		Path path = Paths.get("/work/lucene/sampleapp");
-	    Directory directory = FSDirectory.open(path);
+		Directory directory = FSDirectory.open(path);
 
 		// Now search the index:
-	    DirectoryReader ireader = DirectoryReader.open(directory);
-	    IndexSearcher isearcher = new IndexSearcher(ireader);
+		DirectoryReader ireader = DirectoryReader.open(directory);
+		IndexSearcher isearcher = new IndexSearcher(ireader);
 
-	    // Parse a simple query that searches for "text":
-	    QueryParser parser = new QueryParser("fulltext", analyzer);
-	    Query query = parser.parse(fulltext);
+		// Parse a simple query that searches for "text":
+		QueryParser parser = new QueryParser("fulltext", analyzer);
+		Query query = parser.parse(fulltext);
 
-	    ScoreDoc[] hits = isearcher.search(query, 100, new Sort()).scoreDocs;
-	    // Iterate through the results:
-	    List<Document> results = new ArrayList<Document>();
-	    for (int i = 0; i < hits.length; i++) {
-	      Document hitDoc = isearcher.doc(hits[i].doc);
-	      results.add(hitDoc);
-	    }
-	    ireader.close();
-	    directory.close();
+		ScoreDoc[] hits = isearcher.search(query, 100, new Sort()).scoreDocs;
+		// Iterate through the results:
+		List<Document> results = new ArrayList<Document>();
+		for (int i = 0; i < hits.length; i++) {
+			Document hitDoc = isearcher.doc(hits[i].doc);
+			results.add(hitDoc);
+		}
+		ireader.close();
+		directory.close();
 
-	    return results;
+		return results;
 	}
 
 	public static void main(String[] args) throws IOException, ParseException {

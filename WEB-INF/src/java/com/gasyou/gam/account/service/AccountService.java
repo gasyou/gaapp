@@ -3,13 +3,13 @@ package com.gasyou.gam.account.service;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.gasyou.gam.account.entity.Account;
+import com.gasyou.gam.account.entity.AccountWrapper;
 
 public class AccountService {
 
 	// Dummy
-	public List<Account> search() {
-		List<Account> l = new ArrayList<Account>();
+	public List<AccountWrapper> search() {
+		List<AccountWrapper> l = new ArrayList<AccountWrapper>();
 
 		// start Dummy code.
 		l.add(create("sfdsa1", "dfdsafsda1"));
@@ -19,15 +19,15 @@ public class AccountService {
 	}
 
 	// Dummy
-	public List<Account> search(String id) {
-		List<Account> l = search();
-		List<Account> ret = new ArrayList<Account>();
-		for (Account acct: l) {
-			if (acct.getId().equals(id)) {
-				ret.add(acct);
-				break;
-			}
-		}
+	public List<AccountWrapper> search(String id) {
+		List<AccountWrapper> l = search();
+		List<AccountWrapper> ret = new ArrayList<AccountWrapper>();
+//		for (AccountWrapper acct: l) {
+//			if (acct.getId().equals(id)) {
+//				ret.add(acct);
+//				break;
+//			}
+//		}
 		return ret;
 	}
 
@@ -37,10 +37,8 @@ public class AccountService {
 	 * @param name Account's Name
 	 * @return An Account instance.
 	 */
-	private Account create(String id, String name) {
-		Account acct = new Account();
-		acct.setId(id);
-		acct.setName(name);
+	private AccountWrapper create(String id, String name) {
+		AccountWrapper acct = new AccountWrapper(null);
 		return acct;
 	}
 }

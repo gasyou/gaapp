@@ -13,6 +13,7 @@
 			<p><a href="${app}/UserList.x">User List</a>
 			<p><a href="${app}/AccountList.x">Account List</a>
 			<p><a href="${app}/ProfileList.x">Profile List</a>
+			<p><a href="${app}/AssetList.x">Asset List</a>
 		</div>
 	</div>
 </body>

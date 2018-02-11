@@ -4,8 +4,12 @@ import java.io.File;
 import java.io.IOException;
 import java.util.List;
 
+import com.gasyou.gam.account.search.AccountIndexer;
+import com.gasyou.gam.common.search.Indexer;
 import com.gasyou.gam.common.service.AbstractService;
 import com.gasyou.gam.common.service.ServiceConfig;
+import com.gasyou.gam.profile.search.ProfileIndexer;
+import com.gasyou.gam.webproperty.search.WebpropertyIndexer;
 import com.google.api.client.googleapis.auth.oauth2.GoogleCredential;
 import com.google.api.client.googleapis.javanet.GoogleNetHttpTransport;
 import com.google.api.client.http.HttpTransport;
@@ -61,19 +65,40 @@ public class GAService extends AbstractService {
 
 		// Query for the list of all accounts associated with the service account.
 		Accounts accounts = analytics.management().accounts().list().execute();
-		return accounts.getItems();
+		List<Account> items = accounts.getItems();
+
+		Indexer<Account> indexer = new AccountIndexer();
+		for (Account acct: items) {
+			indexer.doReindex(acct);
+		}
+
+		return items;
 	}
 
 	public List<Webproperty> getWebproperties(String accountId) throws IOException {
 
 		Webproperties webProperties = analytics.management().webproperties().list(accountId).execute();
-		return webProperties.getItems();
+		List<Webproperty> items = webProperties.getItems();
+
+		Indexer<Webproperty> indexer = new WebpropertyIndexer();
+		for (Webproperty webProps: items) {
+			indexer.doReindex(webProps);
+		}
+
+		return items;
 	}
 
 	public List<Profile> getProfiles(String accountId, String webPropertyId) throws IOException {
 
 		Profiles profiles = analytics.management().profiles().list(accountId, webPropertyId).execute();
-		return profiles.getItems();
+		List<Profile> items = profiles.getItems();
+
+		Indexer<Profile> indexer = new ProfileIndexer();
+		for (Profile profile: items) {
+			indexer.doReindex(profile);
+		}
+
+		return items;
 	}
 
 //	private static String getFirstProfileId(Analytics analytics) throws IOException {

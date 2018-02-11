@@ -1,13 +1,10 @@
 package com.gasyou.gam.profile.entity;
 
-import org.apache.lucene.document.Document;
-
-import com.gasyou.gam.common.search.SearchableAsset;
 import com.google.api.services.analytics.model.Account;
 import com.google.api.services.analytics.model.Profile;
 import com.google.api.services.analytics.model.Webproperty;
 
-public class ProfileWrapper implements Comparable<ProfileWrapper>, SearchableAsset {
+public class ProfileWrapper implements Comparable<ProfileWrapper> {
 
 	private Account account = null;
 
@@ -51,9 +48,4 @@ public class ProfileWrapper implements Comparable<ProfileWrapper>, SearchableAss
 		return v;
 	}
 
-	@Override
-	public Document getDocument() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
-	}
 }

@@ -1,11 +1,8 @@
 package com.gasyou.gam.account.entity;
 
-import org.apache.lucene.document.Document;
-
-import com.gasyou.gam.common.search.SearchableAsset;
 import com.google.api.services.analytics.model.Account;
 
-public class AccountWrapper implements SearchableAsset {
+public class AccountWrapper {
 	private Account account = null;
 
 	public AccountWrapper(Account account) {
@@ -14,11 +11,5 @@ public class AccountWrapper implements SearchableAsset {
 
 	public Account getAccount() {
 		return this.account;
-	}
-
-	@Override
-	public Document getDocument() {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
 	}
 }

@@ -29,4 +29,8 @@
 		<model-class value="com.gasyou.gam.profile.model.ProfileListModel"></model-class>
 		<forward name="success" path="/WEB-INF/jsp/profileList.jsp"></forward>
 	</model>
+	<model name="AssetList">
+		<model-class value="com.gasyou.gam.asset.model.AssetListModel"></model-class>
+		<forward name="success" path="/WEB-INF/jsp/assetList.jsp"></forward>
+	</model>
 </model-config>

@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.util.List;
 
 import com.gasyou.gam.account.search.AccountIndexer;
+import com.gasyou.gam.common.batch.ThreadPool;
 import com.gasyou.gam.common.search.Indexer;
 import com.gasyou.gam.common.service.AbstractService;
 import com.gasyou.gam.common.service.ServiceConfig;
@@ -67,10 +68,22 @@ public class GAService extends AbstractService {
 		Accounts accounts = analytics.management().accounts().list().execute();
 		List<Account> items = accounts.getItems();
 
-		Indexer<Account> indexer = new AccountIndexer();
-		for (Account acct: items) {
-			indexer.doReindex(acct);
-		}
+		ThreadPool.submit(new Runnable() {
+
+			@Override
+			public void run() {
+				Indexer<Account> indexer = new AccountIndexer();
+				for (Account acct: items) {
+					try {
+						indexer.doReindex(acct);
+					} catch (IOException e) {
+						// TODO 自動生成された catch ブロック
+						e.printStackTrace();
+					}
+				}
+
+			}
+		});
 
 		return items;
 	}

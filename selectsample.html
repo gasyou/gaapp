@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$(document).ready(function() {
+
+	var sel = $("#test-select");
+	var start = sel.attr("data-start");
+	var end = new Date().getFullYear();
+	for (var i = start; i <= end; i++) {
+		sel.append($("<option value='" + i + "'>" + i + "</option>"));
+	}
+});
+</script>
+</head>
+<body>
+	<div>
+		<h1>選択リストの作成の仕方サンプル</h1>
+		<ul>
+			<li>パラメータのfromの判断はなし。クライアント側にて考慮必要。</li>
+			<li>Date利用時はタイムゾーンの考慮必要</li>
+		</ul>
+	</div>
+	<div>
+		<h2>通常のパターン</h2>
+		<p>HTMLキャッシュされる</p>
+		<select>
+			<option value="">YYYY</option>
+			<option value="2016">2016</option>
+			<option value="2017">2017</option>
+			<option value="2018">2018</option>
+		</select>
+	</div>
+	<div>
+		<h2>JSでdocument.write</h2>
+		<p>ブロッキングされる</p>
+		<select>
+			<option value="">YYYY</option>
+			<script>
+				var currentYear = new Date().getFullYear();
+				for (var i = 2016; i <= currentYear; i++) {
+					document.write("<option value='" + i + "'>" + i
+							+ "</option>");
+				}
+			</script>
+		</select>
+	</div>
+	<div>
+		<h2>JQueryで実施</h2>
+		<p>DOM構成後の実行が必要</p>
+		<select id="test-select" data-start="2016">
+			<option value="">YYYY</option>
+		</select>
+	</div>
+</body>
+</html>
